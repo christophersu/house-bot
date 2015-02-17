@@ -5,6 +5,7 @@ billiard==3.3.0.19
 futures==2.2.0
 kombu==3.0.24
 pytz==2014.10
+requests==2.5.1
 six==1.9.0
 tzlocal==1.1.2
 wsgiref==0.1.2
