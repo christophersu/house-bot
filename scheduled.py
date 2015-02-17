@@ -1,6 +1,12 @@
 from apscheduler.schedulers.blocking import BlockingScheduler
-import secrets
+import os
 import requests
+
+if 'GROUPME_BOT_ID' in os.environ:
+    GROUPME_BOT_ID = os.environ['S3_KEY']
+else:
+    import secrets
+    GROUPME_BOT_ID = secrets.GROUPME_BOT_ID
 
 sched = BlockingScheduler()
 
@@ -8,7 +14,7 @@ sched = BlockingScheduler()
 def scheduled_job():
     requests.post("https://api.groupme.com/v3/bots/post", data={
         "text" : 'Dishwasher cycle scheduled for today.',
-        "bot_id" : secrets.BOT_ID
+        "bot_id" : GROUPME_BOT_ID
     })
 
 print "Starting scheduler."
