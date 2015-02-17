@@ -3,7 +3,7 @@ import os
 import requests
 
 if 'GROUPME_BOT_ID' in os.environ:
-    GROUPME_BOT_ID = os.environ['S3_KEY']
+    GROUPME_BOT_ID = os.environ['GROUPME_BOT_ID']
 else:
     import secrets
     GROUPME_BOT_ID = secrets.GROUPME_BOT_ID
