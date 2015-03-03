@@ -13,7 +13,7 @@ sched = BlockingScheduler()
 @sched.scheduled_job('cron', day_of_week='sun,tue,thu', hour=9)
 def scheduled_job():
     requests.post("https://api.groupme.com/v3/bots/post", data={
-        "text" : 'Dishwasher cycle scheduled for today. (Mondays and Thursdays)',
+        "text" : 'Dishwasher cycle scheduled for today. (Sunday, Tuesday, Thursday)',
         "bot_id" : GROUPME_BOT_ID
     })
 
